@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        margin: 0;
+      }
+
+      #app {
+        width: 75%;
+        margin: 0 auto;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <img src="./assets/img/slide.jpg" alt="" onerror="this.onerror=null; this.src='./assets/img/slide7.jpg'" />
+      <img
+        alt=""
+        srcset="./assets/img/elva-fairy-480w.jpeg 1x, ./assets/img/elva-fairy-640w.jpeg 2x"
+        src="./assets/img/elva-fairy-640w.jpeg"
+      />
+      <picture>
+        <source
+          media="(max-width: 799px)"
+          srcset="./assets/img/elva-480w-close-portrait.jpeg"
+        />
+        <source media="(min-width: 800px)" srcset="./assets/img/elva-800w.jpeg" />
+        <img src="./assets/img/elva-800w.jpeg" alt="" />
+      </picture>
+    </div>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.min.js"></script>
+  </body>
+</html>

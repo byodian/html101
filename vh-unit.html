@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      -webkit-print-color-adjust: exact; /* Forces the browser to render
+the background in print mode */
+    }
+    .box {
+      box-sizing: border-box;
+      height: 100vh;
+      background-color: pink;
+      border: 3px solid #f00;
+    }
+
+    .box--blue {
+      border-color: rgb(93, 240, 206);
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>  
+  <div class="box box--blue"></div>  
+  <img 
+  alt=""
+  srcset="./elva-fairy-480w.jpeg 480w, ./elva-fairy-640w.jpeg 640w"
+  sizes="(max-width: 480px) 440px, 800px">
+</body>
+</html>
