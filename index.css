@@ -1,0 +1,192 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#app {
+  height: 10vh;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.parent > * {
+  background-color: aquamarine;
+}
+
+.child {
+  height: 100px;
+  flex: 1 1 150px;
+  flex: 0 1 150px;
+  margin: 5px;
+}
+
+.parent-1 {
+  display: grid;
+  grid-template-columns: minmax(150px, 25%) 1fr;
+}
+
+.parent-1 > * {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.parent-2 {
+  height: 500px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: auto 1fr auto;
+}
+
+.parent-2 > * {
+  border: 1px solid #ccc;
+}
+
+.parent-2 .header,
+.parent-2 .footer {
+  grid-column: 1 / 4;
+}
+
+.parent-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  grid-gap: 5px;
+}
+
+.parent-3 > * {
+  background-color: aquamarine;
+  height: 100px;
+}
+
+.block {
+  height: 100px;
+  background-color: bisque;
+}
+
+.parent-4 {
+  display: flex;
+}
+
+.parent-4 > * {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.parent-5{
+  display: flex;
+  column-gap: 10px;
+  margin-top: 30px;
+}
+
+.parent-5 > * {
+  width: 300px;
+  border: 1px solid yellowgreen;
+}
+
+.parent-5 img {
+  object-fit: cover;
+  width: 100%;
+  height: 25vh;
+}
+
+.parent-6 .card {
+  list-style-type: none;
+  width: 100px;
+  border: 1px solid pink;
+}
+
+.parent-6 .card img {
+  display: block;
+  width: 100%;
+  object-fit: scale-down;
+  padding: 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery li {
+  flex: 1 1 150px;
+  min-height: 30vh;
+  max-height: 50vh;
+}
+
+.gallery img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.parent-7 {
+  display: grid;
+  place-items: center;
+}
+
+.parent-7 .child {
+  width: 300px;
+  height: 500px;
+  position: relative;
+}
+
+.parent-7 .child::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: inset 0 0 100px rgba(10, 10, 10, 0.8);
+  transition: 180ms box-shadow;
+}
+
+.parent-7 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(50%) blur(10px);
+  transition: 180ms filter;
+}
+
+.parent-7 .child:hover img {
+  filter: none;
+}
+
+.parent-7 .child:hover .child::after {
+  box-shadow: none; 
+}
+
+:root {
+  --color-primary: pink;
+}
+
+.custom-variable a {
+  --color: var(--color-primary);
+  --hover-color: green;
+  margin-top: 30px;
+  color: var(--color);
+}
+
+.custom-variable a:hover {
+  color: var(--hover-color);
+}
