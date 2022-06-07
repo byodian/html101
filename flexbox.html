@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox</title>
+  <style>
+    .app {
+      height: 100vh;
+    }
+
+    .parent {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: 10px;
+      height: 100vh;
+    }
+
+    .child {
+      flex: 1 1 100px;
+      width: 100px;
+      height: 100px;
+      background-color: rebeccapurple;
+    }
+
+    .child--1 {
+      background-color: red;
+    }
+    .center {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="parent">
+      <div class="child">123</div>
+      <div class="child">12323</div>
+      <div class="child">123123123</div>
+      <div class="child">3243</div>
+      <div class="child">3424234</div>
+      <div class="child">2324234234234</div>
+      <div class="child">23234234324324234</div>
+      <div class="child child--1">42342340203423</div>
+      <div class="child">2323432</div>
+      <div class="child">234234</div>
+    </div>
+
+    <div class="center">
+      <p>Hello world</p>
+    </div>
+  </div>
+</body>
+</html>

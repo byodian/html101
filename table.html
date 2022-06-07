@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Table</title>
+  <style>
+    html {
+      font-size: 10px;
+      font-family: sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    .app {
+      display: grid;
+      justify-items: center;
+      margin: 2rem 0;
+      height: 100%;
+    }
+
+    table {
+      border-collapse: collapse;
+      letter-spacing: 1px;
+      font-size: 2rem;
+    }
+
+    tbody {
+      font-size: 90%;
+      font-style: italic;
+    }
+
+    th,
+    td {
+      border: 1px solid rgb(200, 200, 200);
+      padding: 0;
+      empty-cells: hide;
+      padding: 5px;
+    }
+
+    td {
+      text-align: center;
+    }
+
+    tr:nth-child(even) td,
+    tr:nth-child(even) th {
+      background-color: rgb(250, 250, 250);
+    }
+
+    tr:nth-child(odd) td,
+    tr:nth-child(odd) th {
+      background-color: rgb(245, 245, 245);
+    }
+
+    tfoot {
+      font-weight: bold;
+    }
+
+    caption {
+      padding: 2rem 0;
+      caption-side: bottom;
+      text-align: left;
+      font-style: italic;
+      color: #666;
+    }
+
+    .align-center {
+      text-align: center;
+    }
+
+    /* table wrapper*/
+    .table-wrapper {
+      width: 80%;
+      overflow: scroll;
+    }
+
+    .table-wrapper--first {
+      width: 500px;
+      height: 150px;
+      margin-bottom: 2rem;
+    }
+
+    /* table */
+    .table {
+      width: 100%;
+      table-layout: fixed;
+      margin: 0 auto;
+    }
+
+    .table--first caption {
+      caption-side: top;
+    }
+
+    .table thead tr {
+      background-color: rgb(250, 250, 250);
+      position: sticky;
+      top: 0;
+      z-index: 3;
+    }
+
+    /* table-width = 600 + 200 = 800px */
+    .table thead th:nth-child(1),
+    .table thead th:nth-child(2),
+    .table thead th:nth-child(4) {
+      width: 200px;
+    }
+
+    .table thead th:nth-child(3),
+    .table thead th:nth-child(5) {
+      width: 100px;
+    }
+
+    .table--first thead th:first-child,
+    .table--first tbody th {
+      position: sticky;
+      left: 0;
+      z-index: 2;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root" class="app">
+    <div class="table-wrapper table-wrapper--first">
+      <table class="table table--first">
+        <caption>How I chose to spend my money</caption>
+        <thead>
+          <tr>
+            <th scope="col">Purchase</th>
+            <th scope="col">Location</th>
+            <th scope="col">Date</th>
+            <th scope="col">Evaluation</th>
+            <th scope="col">Cost (€)</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <td class="align-center" colspan="4">SUM</td>
+            <td>118</td>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <th scope="row">Haircut</th>
+            <td>Hairdresser</td>
+            <td>12/09</td>
+            <td>Great idea</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <th scope="row">Lasagna</th>
+            <td>Restaurant</td>
+            <td>12/09</td>
+            <td>Regrets</td>
+            <td>18</td>
+          </tr>
+          <tr>
+            <th scope="row">Shoes</th>
+            <td>Shoeshop</td>
+            <td>13/09</td>
+            <td>Big regrets</td>
+            <td>65</td>
+          </tr>
+          <tr>
+            <th scope="row">Toothpaste</th>
+            <td>Supermarket</td>
+            <td>13/09</td>
+            <td>Good</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <th scope="row">Toothpaste</th>
+            <td>Supermarket</td>
+            <td>13/09</td>
+            <td>Good</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 多个表头 -->
+    <table>
+      <caption>
+        Items Sold August 2016
+      </caption>
+      <thead>
+        <tr>
+          <th colspan="2" rowspan="2"></th>
+          <th colspan="3" scope="colgroup">Clothes</th>
+          <th colspan="2" scope="colgroup">Accessories</th>
+        </tr>
+        <tr>
+          <th scope="col">Trousers</th>
+          <th scope="col">Skirts</th>
+          <th scope="col">Dresses</th>
+          <th scope="col">Bracelets</th>
+          <th scope="col">Rings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="3" scope="rowgroup">Belgium</th>
+          <th scope="row">Antwerp</th>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+        </tr>
+        <tr>
+          <th scope="row">Antwerp</th>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+        </tr>
+        <tr>
+          <th scope="row">Antwerp</th>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+        </tr>
+        <tr>
+          <th rowspan="2" scope="rowgroup">Belgium</th>
+          <th scope="row">Antwerp</th>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+        </tr>
+        <tr>
+          <th scope="row">Antwerp</th>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+          <td>56</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
