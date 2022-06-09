@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>HTML Web Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    ::placeholder {
+      color: #ccc;
+      font-style: italic;
+      font-size: 12px;
+    }
+
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      font-size: 1.6rem;
+      font-family: sans-serif;
+    }
+
+    main {
+      width: 60%;
+    }
+
+    fieldset {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    legend {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 2px 4px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    form {
+      padding: 1rem 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    /* reset */
+    button,
+    input,
+    select,
+    textarea {
+      font-size: 100%;
+      font-family: inherit;
+    }
+
+    form div {
+      display: flex;
+      column-gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    input,
+    textarea,
+    select {
+      flex: 1;
+      box-sizing: border-box;
+    }
+
+    label {
+      text-align: right;
+      width: 12rem;
+    }
+
+    input:invalid {
+      border: solid red 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <form class="form">
+      <fieldset>
+        <legend>Choose some vegetables</legend>
+        <ul>
+          <li>
+            <label for="carrots">carrots</label>
+            <input type="checkbox" name="vegetable" value="carrots" id="carrots">
+          </li>
+          <li>
+            <label for="peas">peas</label>
+            <input type="checkbox" name="vegetable" value="peas" id="peas">
+          </li>
+          <li>
+            <label for="cabbage">cabbage</label>
+            <input type="checkbox" name="vegetable" value="cabbage" id="cabbage">
+          </li>
+        </ul>
+      </fieldset>
+      <div>
+        <label for="name">Name: </label>
+        <input type="text" id="name" placeholder="name">
+      </div>
+      <div>
+        <label for="mail">E-mail: </label>
+        <input type="email" id="mail" placeholder="email">
+      </div>
+      <div>
+        <label for="msg">Message: </label>
+        <textarea id="msg" placeholder="message" rows="8" resize="vertical"></textarea>
+      </div>
+      <div>
+        <label for="search">Search</label>
+        <input type="search" id="search" name="search">
+      </div>
+
+      <div>
+        <label for="tel">Tel</label>
+        <input type="tel" id="tel" name="tel">
+      </div>
+
+      <div>
+        <label for="url">Url</label>
+        <input type="url" id="url" name="url">
+      </div>
+
+      <div>
+        <label for="number">Number</label>
+        <input type="number" name="number" id="number" min="2" max="20" step="0.1">
+      </div>
+
+      <div>
+        <label for="slider">Slider</label>
+        <input type="range" name="slider" id="slider" min="0" max="100" step="10" value="20">
+        <span class="slider-text"></span>
+      </div>
+
+      <!--   date and time pickers -->
+      <div>
+        <label for="datetime">Datetime</label>
+        <input type="datetime-local" name="datetime" id="datetime">
+      </div>
+
+      <div>
+        <label for="month">Month</label>
+        <input type="month" name="month" id="month">
+      </div>
+
+      <div>
+        <label for="time">Time</label>
+        <input type="time" name="time" id="time">
+      </div>
+
+      <div>
+        <label for="week">Week</label>
+        <input type="week" name="week" id="week">
+      </div>
+
+      <div>
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date" min="2013-06-01" max="2013-08-31" step="7">
+      </div>
+
+      <!--   color picker control -->
+      <div>
+        <label for="color">Color</label>
+        <input type="color" name="color" id="color">
+      </div>
+
+      <!--   Drop-down controls -->
+      <div>
+        <label for="simple-select">SimpleSelect</label>
+        <select name="simple-select" id="simple-select">
+          <option value="">--Please choose an option --</option>
+          <option value="banana">Banana</option>
+          <option value="cherry">Cherry</option>
+          <option value="lemon">Lemon</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="advanced-select">AdvancedSelect</label>
+        <select name="advanced-select" id="advanced-select" multiple size="3">
+          <optgroup label="fruits">
+            <option value="banana">Banana</option>
+            <option value="cherry">Cherry</option>
+            <option value="lemon">Lemon</option>
+          </optgroup>
+          <optgroup label="vegetables">
+            <option value="carrot">Carrot</option>
+            <option value="eggplant">Eggplant</option>
+            <option value="potato">Potato</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div>
+        <label for="myFruit">What's your favorite fruit?</label>
+        <input type="text" name="myFruit" id="myFruit" list="mySuggestion">
+        <datalist id="mySuggestion">
+          <option>Apple</option>
+          <option>Banana</option>
+          <option>Blackberry</option>
+          <option>Blueberry</option>
+          <option>Lemon</option>
+          <option>Lychee</option>
+          <option>Peach</option>
+          <option>Pear</option>
+        </datalist>
+      </div>
+
+      <!--   progess -->
+      <div>
+        <label for="progress">Progress</label>
+        <progress max="100" value="20" id="progress">75/100</progress>
+      </div>
+
+      <!--  meter  -->
+      <div>
+        <label for="meter">Meter</label>
+        <meter min="0" max="100" value="90" low="69" high="80" id="meter" optimum="82">B</meter>
+      </div>
+
+      <div class="button">
+        <button type="submit">Send your message</button>
+      </div>
+
+      <div class="button">
+        <button type="reset">Reset your message</button>
+      </div>
+    </form>
+
+    <div contenteditable>
+      contenteditable
+    </div>
+
+  </main>
+
+  <script>
+    const form = document.querySelector(".form");
+    const slider = document.getElementById("slider");
+    const output = document.querySelector(".slider-text");
+    output.textContent = slider.value;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+    });
+
+    slider.addEventListener("input", setSliderText);
+
+    function setSliderText(e) {
+      output.textContent = e.target.value;
+    }
+  </script>
+</body>
+
+</html>
